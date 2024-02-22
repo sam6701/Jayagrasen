@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:agrasen/screens/homepage.dart';
 import 'package:agrasen/screens/referal_list.dart';
 import 'package:agrasen/colors/color_utils.dart';
+import 'package:agrasen/screens/profile_page.dart';
 
 class HoverPage extends StatefulWidget {
   final int valu;
@@ -13,10 +14,7 @@ class HoverPage extends StatefulWidget {
 }
 
 class _HoverPageState extends State<HoverPage> {
-  final List<Widget> _pages = [
-    Homepage(),
-    ReferalPage(),
-  ];
+  final List<Widget> _pages = [Homepage(), ReferalPage(), ProfilePage()];
   late int selectpageindex = widget.valu;
   void selectpage(int index) {
     setState(() {
@@ -46,7 +44,12 @@ class _HoverPageState extends State<HoverPage> {
               icon: Icon(
                 Icons.compare_arrows,
               ),
-              label: 'refer'),
+              label: 'Referral'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle_rounded,
+              ),
+              label: 'Profile'),
         ],
       ),
     );

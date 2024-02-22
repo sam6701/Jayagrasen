@@ -13,154 +13,212 @@ class _ReferalPageState extends State<ReferalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Referal List',
-          style: TextStyle(color: ColorUtils.darkbrownish, fontSize: 20),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(90),
+        child: AppBar(
+          backgroundColor: ColorUtils.white,
+          title: Text(
+            'Referal List',
+            style: TextStyle(color: ColorUtils.darkbrownish, fontSize: 20),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black38),
-                      // Add border color
-                      borderRadius: BorderRadius.circular(
-                          10), // Make the container circular
-                    ),
-                    height: 30,
-                    width: MediaQuery.of(context).size.width * .65,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "Dashboard",
-                          hintStyle: TextStyle(color: Colors.black38),
-                          fillColor: ColorUtils.white,
-                          contentPadding: EdgeInsets.only(bottom: 20),
-                          suffixIcon: Padding(
-                            padding: EdgeInsets.only(bottom: 20),
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.search,
-                                color: Colors.black38,
-                              ),
-                              onPressed: () {},
-                            ),
-                          ),
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(10))),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: Container(
-                    height: 30,
-                    width: MediaQuery.of(context).size.width * .25,
-                    decoration: BoxDecoration(
-                      border:
-                          Border.all(color: Colors.black38), // Add border color
-                      borderRadius: BorderRadius.circular(
-                          10), // Make the container circular
-                    ),
-                    child: DropdownButton<String>(
-                      value: _selectedItem,
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          _selectedItem = newValue!;
-                        });
-                      },
-                      dropdownColor: ColorUtils.white,
-                      underline: Container(),
-                      elevation: 0,
-                      items: <String>['1', '2', '3', '4']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'S.No',
-                        style: TextStyle(color: Colors.black38),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Reffered Name',
-                        style: TextStyle(color: Colors.black38),
-                      ),
-                    ],
-                  ),
-                  //Text('1'),
-                  //Text('Harman'),
-                  Text(
-                    'Amount',
-                    style: TextStyle(color: Colors.black38),
-                  ),
-                ],
-              ),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              //physics: const NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, voutIndex) {
-                return Padding(
-                  padding:
-                      EdgeInsets.only(left: 15, right: 10, bottom: 10, top: 15),
-                  child: Container(
-                    decoration:
-                        BoxDecoration(border: Border(bottom: BorderSide())),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('1'),
-                            SizedBox(
-                              width: 45,
-                            ),
-                            Text('Harman'),
-                          ],
+        child: Container(
+          decoration: BoxDecoration(
+            color: ColorUtils.white,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 18, right: 18, top: 32),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black38),
+                          // Add border color
+                          borderRadius: BorderRadius.circular(
+                              10), // Make the container circular
                         ),
-                        //Text('1'),
-                        //Text('Harman'),
-                        Text('₹100'),
+                        height: 30,
+                        width: MediaQuery.of(context).size.width * .70,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              hintText: "Dashboard",
+                              hintStyle: TextStyle(
+                                  color: ColorUtils.lightextGrey,
+                                  fontFamily: 'IBM Plex Sans Devanagari',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
+                              fillColor: ColorUtils.white,
+                              contentPadding: EdgeInsets.only(bottom: 20),
+                              suffixIcon: Padding(
+                                padding: EdgeInsets.only(bottom: 20),
+                                child: IconButton(
+                                  icon: Icon(
+                                    Icons.search,
+                                    color: ColorUtils.lightextGrey,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              filled: true,
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(12),
+                              )),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 0),
+                      child: Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width * .15,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color:
+                                  ColorUtils.lightextGrey), // Add border color
+                          borderRadius: BorderRadius.circular(
+                              10), // Make the container circular
+                        ),
+                        child: DropdownButton<String>(
+                          value: _selectedItem,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              _selectedItem = newValue!;
+                            });
+                          },
+                          dropdownColor: ColorUtils.white,
+                          underline: Container(),
+                          elevation: 0,
+                          items: <String>['1', '2', '3', '4']
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(
+                                    color: ColorUtils.lightextGrey,
+                                    fontFamily: 'IBM Plex Sans Devanagari',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 18, right: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'S.No',
+                          style: TextStyle(
+                              color: ColorUtils.lightextGrey,
+                              fontFamily: 'IBM Plex Sans Devanagari',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'Reffered Name',
+                          style: TextStyle(
+                              color: ColorUtils.lightextGrey,
+                              fontFamily: 'IBM Plex Sans Devanagari',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16),
+                        ),
                       ],
                     ),
-                  ),
-                );
-              },
-            ),
-          ],
+                    Text(
+                      'Amount',
+                      style: TextStyle(
+                          color: ColorUtils.lightextGrey,
+                          fontFamily: 'IBM Plex Sans Devanagari',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                //physics: const NeverScrollableScrollPhysics(),
+                itemCount: 10,
+                itemBuilder: (context, voutIndex) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        left: 18, right: 10, bottom: 10, top: 18),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border(
+                              bottom:
+                                  BorderSide(color: ColorUtils.lightextGrey))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                '1',
+                                style: TextStyle(
+                                    color: ColorUtils.darktextGrey,
+                                    fontFamily: 'IBM Plex Sans Devanagari',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                              SizedBox(
+                                width: 45,
+                              ),
+                              Text(
+                                'Harman',
+                                style: TextStyle(
+                                    color: ColorUtils.darktextGrey,
+                                    fontFamily: 'IBM Plex Sans Devanagari',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
+                          //Text('1'),
+                          //Text('Harman'),
+                          Text(
+                            '₹100',
+                            style: TextStyle(
+                                color: ColorUtils.darktextGrey,
+                                fontFamily: 'IBM Plex Sans Devanagari',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

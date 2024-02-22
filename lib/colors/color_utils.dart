@@ -7,6 +7,11 @@ class ColorUtils {
   static const darkbrownish = Color(0xffC35810);
   static const darkbrownish2 = Color(0xff8F3D00);
   static const lightbrownishpink = Color(0xffFCEBD8);
+  static const dascolor = Color(0xffC35810);
+  static const trefcolor = Color(0xff6B6B6B);
+  static const nocolor = Color(0xff151515);
+  static const lightGreygmail = Color(0xff6B6B6B);
+  static const lightGreytext = Color(0xff525252);
 
   static const primary = Color(0xffD4600B);
   static const lightOrange = Color(0xffFCC17C);
@@ -37,6 +42,9 @@ class ColorUtils {
   static const lightGrey2 = Color(0xff959595);
   static const grey61 = Color(0xff616161);
   static const lightModeGrey = Color(0xff7F909F);
+  static const lightimgGrey = Color(0xffD9D9D9);
+  static const lightextGrey = Color(0xff939393);
+  static const darktextGrey = Color(0xff151515);
 
   static const Color menuBackground = Color(0xFF090912);
   static const Color itemsBackground = Color(0xFF1B2339);
